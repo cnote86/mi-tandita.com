@@ -202,7 +202,15 @@ export default function Home() {
             {/* Bottom bar */}
             <div className="pt-8 border-t border-[#3d5a3d]/30 flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-white/30 text-xs">
-                © {new Date().getFullYear()} Mi Tandita
+                © 2026 Mi Tandita. Todos los derechos reservados. | Designed by{" "}
+                <a 
+                  href="https://codevostudio.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/50 hover:text-[#7fde58] transition-colors"
+                >
+                  CodevoStudio
+                </a>
               </p>
               <p className="text-white/20 text-xs">
                 Hecho en Mexico

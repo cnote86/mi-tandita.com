@@ -152,7 +152,15 @@ export default function TerminosPage() {
       <footer className="py-8 px-6 border-t border-[#3d5a3d]">
         <div className="max-w-3xl mx-auto">
           <p className="text-white/40 text-xs font-light text-center">
-            © {new Date().getFullYear()} Mi Tandita. Todos los derechos reservados.
+            © 2026 Mi Tandita. Todos los derechos reservados. | Designed by{" "}
+            <a 
+              href="https://codevostudio.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-[#7fde58] transition-colors"
+            >
+              CodevoStudio
+            </a>
           </p>
         </div>
       </footer>
