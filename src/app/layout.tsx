@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
     default: "Mi Tandita - Organiza tus Tandas | App de Ahorro Colectivo",
     template: "%s | Mi Tandita",
   },
-  description: "Organiza y coordina tandas de ahorro con amigos y familia. La app mas facil para grupos de ahorro rotativo en Mexico. Proximamente en App Store y Google Play.",
+  description:
+    "Organiza y coordina tandas de ahorro con amigos y familia. La app mas facil para grupos de ahorro rotativo en Mexico. Proximamente en App Store y Google Play.",
   keywords: [
     "tandas",
     "tandas mexico",
@@ -60,7 +61,8 @@ export const metadata: Metadata = {
     url: "https://mi-tandita.com",
     siteName: "Mi Tandita",
     title: "Mi Tandita - Organiza tus Tandas Sin Complicaciones",
-    description: "La plataforma mas facil para organizar tandas de ahorro con amigos y familia. No manejamos dinero. Proximamente en App Store y Google Play.",
+    description:
+      "La plataforma mas facil para organizar tandas de ahorro con amigos y familia. No manejamos dinero. Proximamente en App Store y Google Play.",
     images: [
       {
         url: "/og-image.png",
@@ -73,7 +75,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mi Tandita - Organiza tus Tandas",
-    description: "La plataforma mas facil para organizar tandas de ahorro. Proximamente en App Store y Google Play.",
+    description:
+      "La plataforma mas facil para organizar tandas de ahorro. Proximamente en App Store y Google Play.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -100,97 +103,60 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Mi Tandita",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "iOS, Android",
-        "description": "Plataforma para organizar y coordinar tandas de ahorro entre amigos y familia",
-        "offers": {
+        name: "Mi Tandita",
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "iOS, Android",
+        description:
+          "Plataforma para organizar y coordinar tandas de ahorro entre amigos y familia",
+        offers: {
           "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "MXN"
-        }
+          price: "0",
+          priceCurrency: "MXN",
+        },
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "Que es una tanda?",
-            "acceptedAnswer": {
+            name: "Que es una tanda?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Una tanda es un sistema de ahorro colectivo donde un grupo de personas aporta una cantidad fija de dinero periodicamente. Cada periodo, un participante diferente recibe el total acumulado. Es una tradicion popular en Mexico tambien conocida como cundina o vaquita."
-            }
+              text:
+                "Una tanda es un sistema de ahorro colectivo donde un grupo de personas aporta una cantidad fija de dinero periodicamente. Cada periodo, un participante diferente recibe el total acumulado.",
+            },
           },
           {
             "@type": "Question",
-            "name": "Mi Tandita maneja mi dinero?",
-            "acceptedAnswer": {
+            name: "Mi Tandita maneja mi dinero?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "No. Mi Tandita es unicamente una herramienta de organizacion y coordinacion. No recibimos, retenemos ni transferimos dinero. Todas las aportaciones se realizan directamente entre los participantes usando los medios de pago que ellos elijan."
-            }
+              text:
+                "No. Mi Tandita es unicamente una herramienta de organizacion y coordinacion. No recibimos ni transferimos dinero.",
+            },
           },
-          {
-            "@type": "Question",
-            "name": "Como funciona Mi Tandita?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Mi Tandita te permite crear grupos de ahorro, definir reglas y calendarios de aportacion, registrar pagos realizados entre participantes, y enviar notificaciones automaticas de recordatorio y seguimiento."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Es seguro usar Mi Tandita?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Si. Como no manejamos dinero, no hay riesgo financiero asociado con la plataforma. Tu informacion personal esta protegida y nunca recopilamos datos financieros como numeros de cuenta o tarjetas."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Cuanto cuesta Mi Tandita?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La plataforma puede cobrar una cuota por el uso del software de organizacion. Esta cuota corresponde unicamente al acceso y mantenimiento de la plataforma tecnologica, no a las aportaciones de las tandas."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "En que paises esta disponible Mi Tandita?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Mi Tandita esta disenada principalmente para usuarios en Mexico, donde las tandas son una tradicion popular de ahorro colectivo."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Cuando estara disponible la app?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Mi Tandita estara disponible proximamente en Apple App Store y Google Play. Registrate para recibir notificaciones cuando lancemos."
-            }
-          }
-        ]
+        ],
       },
       {
         "@type": "Organization",
-        "name": "Mi Tandita",
-        "url": "https://mi-tandita.com",
-        "logo": "https://mi-tandita.com/Mi-Tandita-logo.png",
-        "contactPoint": {
+        name: "Mi Tandita",
+        url: "https://mi-tandita.com",
+        logo: "https://mi-tandita.com/Mi-Tandita-logo.png",
+        contactPoint: {
           "@type": "ContactPoint",
-          "email": "contacto@mi-tandita.com",
-          "contactType": "customer service"
-        }
-      }
-    ]
+          email: "contacto@mi-tandita.com",
+          contactType: "customer service",
+        },
+      },
+    ],
   };
 
   return (
@@ -204,8 +170,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <Analytics/>
+        <main id="main-content">
+          {children}
+        </main>
+
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
