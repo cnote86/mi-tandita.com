@@ -1,65 +1,163 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="relative min-h-screen bg-neutral-950">
+      {/* Fixed Logo Background - Centered with Parallax Effect */}
+      <div 
+        className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none"
+        style={{
+          backgroundImage: "url('/Mi -Tandita-logo.png')",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "clamp(280px, 40vw, 500px)",
+          backgroundAttachment: "fixed",
+          opacity: 0.12,
+        }}
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="fixed inset-0 z-[1] bg-gradient-to-b from-neutral-950/80 via-transparent to-neutral-950/90 pointer-events-none" />
+
+      {/* Scrolling Content */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white mb-8 leading-tight">
+              Mi Tandita
+            </h1>
+            
+            {/* Critical One-Liner */}
+            <p className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed max-w-2xl mx-auto border-l-2 border-amber-500/60 pl-6 text-left">
+              Plataforma digital para la organización y coordinación de tandas entre usuarios. 
+              <span className="text-amber-400/90 font-medium"> No manejamos dinero.</span>
+            </p>
+          </div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+            <div className="w-px h-16 bg-gradient-to-b from-transparent via-neutral-500 to-transparent animate-pulse" />
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-24 px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-light text-white mb-16 text-center tracking-wide">
+              Qué hace la aplicación
+            </h2>
+            
+            <div className="grid gap-6 md:gap-8">
+              {[
+                {
+                  title: "Organización de grupos",
+                  description: "Organización de grupos de ahorro entre personas conocidas"
+                },
+                {
+                  title: "Reglas y calendarios",
+                  description: "Definición de reglas y calendarios de aportación"
+                },
+                {
+                  title: "Registro de pagos",
+                  description: "Registro de pagos realizados directamente entre participantes"
+                },
+                {
+                  title: "Seguimiento",
+                  description: "Notificaciones y seguimiento de cumplimiento"
+                }
+              ].map((feature, index) => (
+                <div 
+                  key={index}
+                  className="group p-8 md:p-10 bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-sm hover:border-neutral-700/50 transition-all duration-500"
+                >
+                  <div className="flex items-start gap-6">
+                    <span className="text-amber-500/70 text-sm font-mono mt-1">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-medium text-white mb-2 tracking-wide">
+                        {feature.title}
+                      </h3>
+                      <p className="text-neutral-400 font-light leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Disclaimer Section */}
+        <section className="py-24 px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="p-10 md:p-14 bg-neutral-900/30 backdrop-blur-sm border border-amber-500/20 rounded-sm">
+              <h2 className="text-xl md:text-2xl font-light text-white mb-8 tracking-wide">
+                Qué no hace la aplicación
+              </h2>
+              <p className="text-neutral-300 font-light leading-loose text-lg">
+                La plataforma <span className="text-amber-400/90 font-medium">no recibe, retiene ni transfiere dinero</span>. 
+                Todas las aportaciones se realizan directamente entre los participantes a través de 
+                proveedores externos de pago.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-16 px-6 border-t border-neutral-800/50">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 mb-12">
+              {/* Company Info */}
+              <div>
+                <h3 className="text-white font-medium mb-6 tracking-wide">Información Legal</h3>
+                <div className="space-y-3 text-neutral-400 font-light text-sm">
+                  <p>Mario Alberto Campos Avitia</p>
+                  <p>País: México</p>
+                  <p>
+                    Contacto:{" "}
+                    <a 
+                      href="mailto:contacto@mi-tandita.com" 
+                      className="text-neutral-300 hover:text-white transition-colors"
+                    >
+                      contacto@mi-tandita.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* Legal Links */}
+              <div>
+                <h3 className="text-white font-medium mb-6 tracking-wide">Documentos Legales</h3>
+                <div className="space-y-3 text-sm">
+                  <Link 
+                    href="/terminos" 
+                    className="block text-neutral-400 hover:text-white transition-colors font-light"
+                  >
+                    Términos y Condiciones
+                  </Link>
+                  <Link 
+                    href="/privacidad" 
+                    className="block text-neutral-400 hover:text-white transition-colors font-light"
+                  >
+                    Aviso de Privacidad
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="pt-8 border-t border-neutral-800/30">
+              <p className="text-neutral-500 text-xs font-light text-center">
+                © {new Date().getFullYear()} Mi Tandita. Todos los derechos reservados.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
