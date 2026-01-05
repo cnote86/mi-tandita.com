@@ -34,7 +34,7 @@ export default function PrivacidadPage() {
                   1. Responsable del Tratamiento
                 </h2>
                 <p>
-                  Mario Ricard Campos Hernandez, con domicilio en México, es responsable del 
+                  Mario Ricardo Campos Hernandez, con domicilio en México, es responsable del 
                   tratamiento de sus datos personales.
                 </p>
                 <p className="mt-4">
