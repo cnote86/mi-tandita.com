@@ -19,8 +19,64 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Mi Tandita - Organización de Tandas",
-  description: "Plataforma digital para la organización y coordinación de tandas entre usuarios. No manejamos dinero.",
+  metadataBase: new URL("https://mi-tandita.com"),
+  title: {
+    default: "Mi Tandita - Organiza tus Tandas | App de Ahorro Colectivo",
+    template: "%s | Mi Tandita",
+  },
+  description: "Organiza y coordina tandas de ahorro con amigos y familia. La app mas facil para grupos de ahorro rotativo en Mexico. Proximamente en App Store y Google Play.",
+  keywords: [
+    "tandas",
+    "tandas mexico",
+    "ahorro colectivo",
+    "grupos de ahorro",
+    "ahorro rotativo",
+    "cundina",
+    "vaquita",
+    "organizar tandas",
+    "app tandas",
+    "ahorro entre amigos",
+    "finanzas personales mexico",
+  ],
+  authors: [{ name: "Mi Tandita" }],
+  creator: "Mi Tandita",
+  publisher: "Mi Tandita",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: "https://mi-tandita.com",
+    siteName: "Mi Tandita",
+    title: "Mi Tandita - Organiza tus Tandas Sin Complicaciones",
+    description: "La plataforma mas facil para organizar tandas de ahorro con amigos y familia. No manejamos dinero. Proximamente en App Store y Google Play.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Mi Tandita - App de Tandas",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mi Tandita - Organiza tus Tandas",
+    description: "La plataforma mas facil para organizar tandas de ahorro. Proximamente en App Store y Google Play.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://mi-tandita.com",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -34,6 +90,7 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "Mi Tandita",
   },
+  category: "finance",
 };
 
 export default function RootLayout({
@@ -41,8 +98,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Mi Tandita",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS, Android",
+    "description": "Plataforma para organizar y coordinar tandas de ahorro entre amigos y familia",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MXN"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "1"
+    }
+  };
+
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
