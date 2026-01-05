@@ -7,11 +7,19 @@ export function ContactForm() {
     name: "",
     email: "",
     message: "",
+    website: "", // honeypot
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Honeypot check - if filled, silently reject
+    if (formData.website) {
+      setStatus("success"); // Fake success to not alert bots
+      return;
+    }
+    
     setStatus("loading");
 
     try {
@@ -23,7 +31,7 @@ export function ContactForm() {
 
       if (response.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", website: "" });
       } else {
         setStatus("error");
       }
@@ -33,7 +41,18 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Honeypot field - hidden from humans */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.website}
+          onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+        />
+      </div>
       <div>
         <input
           type="text"
@@ -41,7 +60,7 @@ export function ContactForm() {
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
-          className="w-full bg-[#243824] border border-[#3d5a3d] px-5 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#7fde58] transition-colors"
+          className="w-full bg-transparent border-b border-[#3d5a3d] px-1 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#7fde58] transition-colors"
         />
       </div>
       <div>
@@ -51,7 +70,7 @@ export function ContactForm() {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           required
-          className="w-full bg-[#243824] border border-[#3d5a3d] px-5 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#7fde58] transition-colors"
+          className="w-full bg-transparent border-b border-[#3d5a3d] px-1 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#7fde58] transition-colors"
         />
       </div>
       <div>
@@ -60,17 +79,19 @@ export function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           required
-          rows={5}
-          className="w-full bg-[#243824] border border-[#3d5a3d] px-5 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#7fde58] transition-colors resize-none"
+          rows={4}
+          className="w-full bg-transparent border-b border-[#3d5a3d] px-1 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#7fde58] transition-colors resize-none"
         />
       </div>
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="w-full bg-[#7fde58] text-[#1a2e1a] font-bold py-4 px-8 hover:bg-[#9fe878] transition-colors disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider text-sm"
-      >
-        {status === "loading" ? "Enviando..." : "Enviar Mensaje"}
-      </button>
+      <div className="pt-6">
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="w-full bg-[#7fde58] text-[#1a2e1a] font-bold py-4 px-8 rounded-full hover:bg-[#9fe878] transition-all disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider text-sm hover:scale-[1.02] active:scale-[0.98]"
+        >
+          {status === "loading" ? "Enviando..." : "Enviar Mensaje"}
+        </button>
+      </div>
       
       {status === "success" && (
         <p className="text-[#7fde58] text-center text-sm">

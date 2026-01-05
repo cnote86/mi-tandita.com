@@ -167,7 +167,7 @@ export default function Home() {
         <footer className="py-20 px-6 border-t border-[#3d5a3d]/50">
           <div className="max-w-5xl mx-auto">
             
-            <div className="grid md:grid-cols-3 gap-16 mb-16">
+            <div className="grid md:grid-cols-2 gap-16 mb-16">
               {/* Brand */}
               <div>
                 <Image
@@ -198,20 +198,6 @@ export default function Home() {
                   >
                     Aviso de Privacidad
                   </Link>
-                </div>
-              </div>
-              
-              {/* Contact */}
-              <div>
-                <h4 className="text-white font-bold text-xs tracking-[0.2em] uppercase mb-6">Contacto</h4>
-                <div className="space-y-4 text-sm font-light">
-                  <p className="text-white/50">Mexico</p>
-                  <a 
-                    href="mailto:contacto@mi-tandita.com" 
-                    className="block text-white/50 hover:text-[#7fde58] transition-colors"
-                  >
-                    contacto@mi-tandita.com
-                  </a>
                 </div>
               </div>
             </div>
