@@ -206,7 +206,9 @@ export default function Home() {
               
               {/* Legal */}
               <div>
-                <h4 className="text-white font-bold text-xs tracking-[0.2em] uppercase mb-6">Legal</h4>
+<h2 className="text-white font-bold text-xs tracking-[0.2em] uppercase mb-6">
+  Legal
+</h2>
                 <div className="space-y-4">
                   <Link 
                     href="/terminos" 
