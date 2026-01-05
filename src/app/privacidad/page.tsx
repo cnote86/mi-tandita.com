@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function PrivacidadPage() {
   return (
-    <div className="min-h-screen bg-neutral-950">
+    <div className="min-h-screen bg-[#1a2e1a]">
       {/* Header */}
-      <header className="py-8 px-6 border-b border-neutral-800/50">
+      <header className="py-8 px-6 border-b border-[#3d5a3d]">
         <div className="max-w-3xl mx-auto">
           <Link 
             href="/" 
-            className="text-neutral-400 hover:text-white transition-colors text-sm font-light"
+            className="text-white/60 hover:text-[#7fde58] transition-colors text-sm font-light"
           >
             Volver al inicio
           </Link>
@@ -22,26 +22,26 @@ export default function PrivacidadPage() {
             Aviso de Privacidad
           </h1>
           
-          <p className="text-neutral-500 text-sm mb-12 font-light">
+          <p className="text-white/50 text-sm mb-12 font-light">
             Versión preliminar — Última actualización: Enero 2026
           </p>
 
           <div className="prose prose-invert prose-neutral max-w-none">
-            <div className="space-y-10 text-neutral-300 font-light leading-relaxed">
+            <div className="space-y-10 text-white/80 font-light leading-relaxed">
               
               <section>
                 <h2 className="text-xl text-white font-medium mb-4 tracking-wide">
                   1. Responsable del Tratamiento
                 </h2>
                 <p>
-                  Mario Alberto Campos Avitia, con domicilio en México, es responsable del 
+                  Mario Ricard Campos Hernandez, con domicilio en México, es responsable del 
                   tratamiento de sus datos personales.
                 </p>
                 <p className="mt-4">
                   Correo de contacto:{" "}
                   <a 
                     href="mailto:contacto@mi-tandita.com" 
-                    className="text-amber-400/90 hover:text-amber-300 transition-colors"
+                    className="text-[#7fde58] hover:text-[#9fe878] transition-colors"
                   >
                     contacto@mi-tandita.com
                   </a>
@@ -56,7 +56,7 @@ export default function PrivacidadPage() {
                   Para el funcionamiento de la plataforma Mi Tandita, podemos recopilar los 
                   siguientes datos personales:
                 </p>
-                <ul className="list-disc pl-6 mt-4 space-y-2 text-neutral-400">
+                <ul className="list-disc pl-6 mt-4 space-y-2 text-white/60">
                   <li>Nombre completo</li>
                   <li>Correo electrónico</li>
                   <li>Número de teléfono</li>
@@ -71,7 +71,7 @@ export default function PrivacidadPage() {
                 <p>
                   Sus datos personales serán utilizados para las siguientes finalidades:
                 </p>
-                <ul className="list-disc pl-6 mt-4 space-y-2 text-neutral-400">
+                <ul className="list-disc pl-6 mt-4 space-y-2 text-white/60">
                   <li>Crear y administrar su cuenta de usuario</li>
                   <li>Facilitar la organización de tandas entre usuarios</li>
                   <li>Enviar notificaciones relacionadas con sus tandas</li>
@@ -84,7 +84,7 @@ export default function PrivacidadPage() {
                 <h2 className="text-xl text-white font-medium mb-4 tracking-wide">
                   4. Datos Financieros
                 </h2>
-                <p className="text-amber-400/90">
+                <p className="text-[#7fde58]">
                   Mi Tandita NO recopila, almacena ni procesa información financiera, 
                   números de cuenta bancaria, datos de tarjetas de crédito o débito, 
                   ni ningún otro dato financiero sensible.
@@ -115,7 +115,7 @@ export default function PrivacidadPage() {
                   de sus datos personales. Para ejercer estos derechos, puede contactarnos en:{" "}
                   <a 
                     href="mailto:contacto@mi-tandita.com" 
-                    className="text-amber-400/90 hover:text-amber-300 transition-colors"
+                    className="text-[#7fde58] hover:text-[#9fe878] transition-colors"
                   >
                     contacto@mi-tandita.com
                   </a>
@@ -153,7 +153,7 @@ export default function PrivacidadPage() {
                   de sus datos personales, puede contactarnos en:{" "}
                   <a 
                     href="mailto:contacto@mi-tandita.com" 
-                    className="text-amber-400/90 hover:text-amber-300 transition-colors"
+                    className="text-[#7fde58] hover:text-[#9fe878] transition-colors"
                   >
                     contacto@mi-tandita.com
                   </a>
@@ -166,9 +166,9 @@ export default function PrivacidadPage() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-neutral-800/50">
+      <footer className="py-8 px-6 border-t border-[#3d5a3d]">
         <div className="max-w-3xl mx-auto">
-          <p className="text-neutral-500 text-xs font-light text-center">
+          <p className="text-white/40 text-xs font-light text-center">
             © {new Date().getFullYear()} Mi Tandita. Todos los derechos reservados.
           </p>
         </div>

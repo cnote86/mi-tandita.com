@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-neutral-950">
+    <div className="relative min-h-screen bg-[#1a2e1a]">
       {/* Fixed Logo Background - Centered with Parallax Effect */}
       <div 
         className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none"
@@ -12,12 +12,9 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
           backgroundSize: "clamp(280px, 40vw, 500px)",
           backgroundAttachment: "fixed",
-          opacity: 0.12,
+          opacity: 0.15,
         }}
       />
-      
-      {/* Gradient Overlay */}
-      <div className="fixed inset-0 z-[1] bg-gradient-to-b from-neutral-950/80 via-transparent to-neutral-950/90 pointer-events-none" />
 
       {/* Scrolling Content */}
       <div className="relative z-10">
@@ -30,15 +27,15 @@ export default function Home() {
             </h1>
             
             {/* Critical One-Liner */}
-            <p className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed max-w-2xl mx-auto border-l-2 border-amber-500/60 pl-6 text-left">
+            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-2xl mx-auto border-l-2 border-[#7fde58] pl-6 text-left">
               Plataforma digital para la organización y coordinación de tandas entre usuarios. 
-              <span className="text-amber-400/90 font-medium"> No manejamos dinero.</span>
+              <span className="text-[#7fde58] font-medium"> No manejamos dinero.</span>
             </p>
           </div>
           
           {/* Scroll Indicator */}
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-            <div className="w-px h-16 bg-gradient-to-b from-transparent via-neutral-500 to-transparent animate-pulse" />
+            <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#7fde58]/50 to-transparent animate-pulse" />
           </div>
         </section>
 
@@ -70,17 +67,17 @@ export default function Home() {
               ].map((feature, index) => (
                 <div 
                   key={index}
-                  className="group p-8 md:p-10 bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-sm hover:border-neutral-700/50 transition-all duration-500"
+                  className="group p-8 md:p-10 bg-[#243824] border border-[#3d5a3d] rounded-sm hover:border-[#7fde58]/50 transition-all duration-500"
                 >
                   <div className="flex items-start gap-6">
-                    <span className="text-amber-500/70 text-sm font-mono mt-1">
+                    <span className="text-[#7fde58] text-sm font-mono mt-1">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <div>
                       <h3 className="text-lg font-medium text-white mb-2 tracking-wide">
                         {feature.title}
                       </h3>
-                      <p className="text-neutral-400 font-light leading-relaxed">
+                      <p className="text-white/70 font-light leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -94,12 +91,12 @@ export default function Home() {
         {/* Disclaimer Section */}
         <section className="py-24 px-6">
           <div className="max-w-3xl mx-auto">
-            <div className="p-10 md:p-14 bg-neutral-900/30 backdrop-blur-sm border border-amber-500/20 rounded-sm">
+            <div className="p-10 md:p-14 bg-[#243824] border border-[#7fde58]/30 rounded-sm">
               <h2 className="text-xl md:text-2xl font-light text-white mb-8 tracking-wide">
                 Qué no hace la aplicación
               </h2>
-              <p className="text-neutral-300 font-light leading-loose text-lg">
-                La plataforma <span className="text-amber-400/90 font-medium">no recibe, retiene ni transfiere dinero</span>. 
+              <p className="text-white/80 font-light leading-loose text-lg">
+                La plataforma <span className="text-[#7fde58] font-medium">no recibe, retiene ni transfiere dinero</span>. 
                 Todas las aportaciones se realizan directamente entre los participantes a través de 
                 proveedores externos de pago.
               </p>
@@ -108,20 +105,19 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-16 px-6 border-t border-neutral-800/50">
+        <footer className="py-16 px-6 border-t border-[#3d5a3d]">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 mb-12">
               {/* Company Info */}
               <div>
                 <h3 className="text-white font-medium mb-6 tracking-wide">Información Legal</h3>
-                <div className="space-y-3 text-neutral-400 font-light text-sm">
-                  <p>Mario Alberto Campos Avitia</p>
+                <div className="space-y-3 text-white/60 font-light text-sm">
                   <p>País: México</p>
                   <p>
                     Contacto:{" "}
                     <a 
                       href="mailto:contacto@mi-tandita.com" 
-                      className="text-neutral-300 hover:text-white transition-colors"
+                      className="text-white/80 hover:text-[#7fde58] transition-colors"
                     >
                       contacto@mi-tandita.com
                     </a>
@@ -135,13 +131,13 @@ export default function Home() {
                 <div className="space-y-3 text-sm">
                   <Link 
                     href="/terminos" 
-                    className="block text-neutral-400 hover:text-white transition-colors font-light"
+                    className="block text-white/60 hover:text-[#7fde58] transition-colors font-light"
                   >
                     Términos y Condiciones
                   </Link>
                   <Link 
                     href="/privacidad" 
-                    className="block text-neutral-400 hover:text-white transition-colors font-light"
+                    className="block text-white/60 hover:text-[#7fde58] transition-colors font-light"
                   >
                     Aviso de Privacidad
                   </Link>
@@ -150,8 +146,8 @@ export default function Home() {
             </div>
 
             {/* Copyright */}
-            <div className="pt-8 border-t border-neutral-800/30">
-              <p className="text-neutral-500 text-xs font-light text-center">
+            <div className="pt-8 border-t border-[#3d5a3d]/50">
+              <p className="text-white/40 text-xs font-light text-center">
                 © {new Date().getFullYear()} Mi Tandita. Todos los derechos reservados.
               </p>
             </div>

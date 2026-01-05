@@ -4,8 +4,8 @@
   "description": "Plataforma digital para la organización y coordinación de tandas entre usuarios.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "#1a2e1a",
+  "theme_color": "#1a2e1a",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
