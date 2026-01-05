@@ -1,6 +1,11 @@
 {
-  "name": "mi-tandita.com",
-  "short_name": "mi-tandita.com",
+  "name": "Mi Tandita",
+  "short_name": "Mi Tandita",
+  "description": "Plataforma digital para la organización y coordinación de tandas entre usuarios.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -14,8 +19,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "theme_color": "#000000",
-  "background_color": "#7fde58",
-  "display": "standalone"
+  ]
 }
