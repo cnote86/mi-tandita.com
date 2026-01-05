@@ -183,7 +183,7 @@ export default function RootLayout({
         "@type": "Organization",
         "name": "Mi Tandita",
         "url": "https://mi-tandita.com",
-        "logo": "https://mi-tandita.com/Mi -Tandita-logo.png",
+        "logo": "https://mi-tandita.com/Mi-Tandita-logo.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "contacto@mi-tandita.com",

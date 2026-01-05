@@ -22,6 +22,7 @@ export default function Home() {
               width={600}
               height={600}
               priority
+              fetchPriority="high"
               className="w-full h-auto drop-shadow-2xl"
             />
           </div>
