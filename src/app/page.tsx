@@ -39,8 +39,7 @@ export default function Home() {
           
           {/* Scroll hint */}
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-            <span className="text-white/30 text-xs tracking-[0.3em] uppercase">Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-[#7fde58]/60 to-transparent" />
+            <div className="w-px h-16 bg-gradient-to-b from-[#7fde58]/60 to-transparent" />
           </div>
         </section>
 
