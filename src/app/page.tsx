@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
           
           {/* Large Logo - The Statement */}
-          <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl mb-16">
+          <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl mb-12">
             <Image
               src="/Mi -Tandita-logo.png"
               alt="Mi Tandita"
@@ -25,13 +26,13 @@ export default function Home() {
             />
           </div>
           
-          {/* Tagline */}
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed tracking-wide">
+          {/* Tagline - BOLD */}
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl text-white font-black leading-tight tracking-tight">
               Organiza tus tandas.
               <span className="text-[#7fde58]"> Sin complicaciones.</span>
-            </p>
-            <p className="mt-6 text-white/50 text-sm tracking-widest uppercase">
+            </h1>
+            <p className="mt-8 text-white/50 text-sm tracking-widest uppercase">
               Plataforma de coordinacion
             </p>
           </div>
@@ -48,8 +49,8 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-[1fr,2px,1fr] gap-12 md:gap-16 items-center">
               <div>
-                <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase mb-4 block">Nuestra promesa</span>
-                <h2 className="text-3xl md:text-4xl font-light text-white leading-snug">
+                <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase font-bold mb-4 block">Nuestra promesa</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-none">
                   No manejamos<br />tu dinero.
                 </h2>
               </div>
@@ -66,8 +67,8 @@ export default function Home() {
         <section className="py-32 px-6 bg-[#162816]">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
-              <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase mb-4 block">Funcionalidad</span>
-              <h2 className="text-3xl md:text-4xl font-light text-white">
+              <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase font-bold mb-4 block">Funcionalidad</span>
+              <h2 className="text-4xl md:text-5xl font-black text-white">
                 Que hace la plataforma
               </h2>
             </div>
@@ -99,8 +100,8 @@ export default function Home() {
                   key={item.num}
                   className="bg-[#162816] p-10 md:p-14 group hover:bg-[#1d331d] transition-colors duration-500"
                 >
-                  <span className="text-[#7fde58]/60 text-xs font-mono tracking-wider">{item.num}</span>
-                  <h3 className="text-xl text-white mt-4 mb-3 font-normal tracking-wide">
+                  <span className="text-[#7fde58] text-sm font-bold tracking-wider">{item.num}</span>
+                  <h3 className="text-2xl text-white mt-4 mb-3 font-bold tracking-tight">
                     {item.title}
                   </h3>
                   <p className="text-white/50 font-light leading-relaxed">
@@ -112,12 +113,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Platform Usage - Compliance section with premium feel */}
+        {/* Platform Usage - Compliance section */}
         <section className="py-32 px-6">
           <div className="max-w-3xl mx-auto">
-            <div className="border-l-2 border-[#7fde58] pl-8 md:pl-12">
-              <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase mb-6 block">Transparencia</span>
-              <h2 className="text-2xl md:text-3xl font-light text-white mb-10">
+            <div className="border-l-4 border-[#7fde58] pl-8 md:pl-12">
+              <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase font-bold mb-6 block">Transparencia</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-10">
                 Uso de la plataforma
               </h2>
               
@@ -128,7 +129,7 @@ export default function Home() {
                 </p>
                 <p>
                   Esta cuota corresponde unicamente al 
-                  <span className="text-white"> acceso y mantenimiento </span>
+                  <span className="text-white font-semibold"> acceso y mantenimiento </span>
                   de la plataforma tecnologica.
                 </p>
                 <p>
@@ -146,7 +147,24 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer - Minimal and elegant */}
+        {/* Contact Form Section */}
+        <section className="py-32 px-6 bg-[#162816]">
+          <div className="max-w-xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase font-bold mb-4 block">Contacto</span>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+                Hablemos
+              </h2>
+              <p className="text-white/50 font-light">
+                Tienes preguntas? Envianos un mensaje.
+              </p>
+            </div>
+            
+            <ContactForm />
+          </div>
+        </section>
+
+        {/* Footer */}
         <footer className="py-20 px-6 border-t border-[#3d5a3d]/50">
           <div className="max-w-5xl mx-auto">
             
@@ -167,7 +185,7 @@ export default function Home() {
               
               {/* Legal */}
               <div>
-                <h4 className="text-white/60 text-xs tracking-[0.2em] uppercase mb-6">Legal</h4>
+                <h4 className="text-white font-bold text-xs tracking-[0.2em] uppercase mb-6">Legal</h4>
                 <div className="space-y-4">
                   <Link 
                     href="/terminos" 
@@ -186,7 +204,7 @@ export default function Home() {
               
               {/* Contact */}
               <div>
-                <h4 className="text-white/60 text-xs tracking-[0.2em] uppercase mb-6">Contacto</h4>
+                <h4 className="text-white font-bold text-xs tracking-[0.2em] uppercase mb-6">Contacto</h4>
                 <div className="space-y-4 text-sm font-light">
                   <p className="text-white/50">Mexico</p>
                   <a 
