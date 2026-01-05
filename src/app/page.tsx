@@ -1,184 +1,211 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#1a2e1a]">
-      {/* Fixed Logo Background - Centered with Parallax Effect */}
-      <div 
-        className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none"
-        style={{
-          backgroundImage: "url('/Mi -Tandita-logo.png')",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "clamp(280px, 40vw, 500px)",
-          backgroundAttachment: "fixed",
-          opacity: 0.15,
-        }}
-      />
-
+    <div className="relative min-h-screen bg-[#1a2e1a] overflow-x-hidden">
+      {/* Subtle gradient overlay */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,_rgba(127,222,88,0.03)_0%,_transparent_50%)]" />
+      
       {/* Scrolling Content */}
       <div className="relative z-10">
-        {/* Hero Section */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white mb-8 leading-tight">
-              Mi Tandita
-            </h1>
-            
-            {/* Critical One-Liner */}
-            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-2xl mx-auto border-l-2 border-[#7fde58] pl-6 text-left">
-              Plataforma digital para la organización y coordinación de tandas entre usuarios. 
-              <span className="text-[#7fde58] font-medium"> No manejamos dinero.</span>
+        
+        {/* Hero Section - Full viewport with prominent logo */}
+        <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
+          
+          {/* Large Logo - The Statement */}
+          <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl mb-16">
+            <Image
+              src="/Mi -Tandita-logo.png"
+              alt="Mi Tandita"
+              width={600}
+              height={600}
+              priority
+              className="w-full h-auto drop-shadow-2xl"
+            />
+          </div>
+          
+          {/* Tagline */}
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed tracking-wide">
+              Organiza tus tandas.
+              <span className="text-[#7fde58]"> Sin complicaciones.</span>
+            </p>
+            <p className="mt-6 text-white/50 text-sm tracking-widest uppercase">
+              Plataforma de coordinacion
             </p>
           </div>
           
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-            <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#7fde58]/50 to-transparent animate-pulse" />
+          {/* Scroll hint */}
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+            <span className="text-white/30 text-xs tracking-[0.3em] uppercase">Scroll</span>
+            <div className="w-px h-12 bg-gradient-to-b from-[#7fde58]/60 to-transparent" />
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-24 px-6">
+        {/* Mission Statement */}
+        <section className="py-32 px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-light text-white mb-16 text-center tracking-wide">
-              Qué hace la aplicación
-            </h2>
+            <div className="grid md:grid-cols-[1fr,2px,1fr] gap-12 md:gap-16 items-center">
+              <div>
+                <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase mb-4 block">Nuestra promesa</span>
+                <h2 className="text-3xl md:text-4xl font-light text-white leading-snug">
+                  No manejamos<br />tu dinero.
+                </h2>
+              </div>
+              <div className="hidden md:block w-px h-32 bg-gradient-to-b from-transparent via-[#7fde58]/40 to-transparent" />
+              <p className="text-white/70 text-lg font-light leading-relaxed">
+                Somos una herramienta de organizacion. Las aportaciones se realizan 
+                directamente entre participantes, a traves de los medios que ustedes elijan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Features - Refined grid */}
+        <section className="py-32 px-6 bg-[#162816]">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20">
+              <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase mb-4 block">Funcionalidad</span>
+              <h2 className="text-3xl md:text-4xl font-light text-white">
+                Que hace la plataforma
+              </h2>
+            </div>
             
-            <div className="grid gap-6 md:gap-8">
+            <div className="grid md:grid-cols-2 gap-px bg-[#3d5a3d]/30">
               {[
                 {
-                  title: "Organización de grupos",
-                  description: "Organización de grupos de ahorro entre personas conocidas"
+                  num: "01",
+                  title: "Grupos de ahorro",
+                  desc: "Organiza grupos entre personas de confianza con reglas claras"
                 },
                 {
-                  title: "Reglas y calendarios",
-                  description: "Definición de reglas y calendarios de aportación"
+                  num: "02",
+                  title: "Calendarios",
+                  desc: "Define fechas y montos de aportacion para cada ciclo"
                 },
                 {
-                  title: "Registro de pagos",
-                  description: "Registro de pagos realizados directamente entre participantes"
+                  num: "03",
+                  title: "Registro",
+                  desc: "Lleva el seguimiento de pagos realizados entre participantes"
                 },
                 {
-                  title: "Seguimiento",
-                  description: "Notificaciones y seguimiento de cumplimiento"
+                  num: "04",
+                  title: "Notificaciones",
+                  desc: "Recordatorios automaticos y seguimiento de cumplimiento"
                 }
-              ].map((feature, index) => (
+              ].map((item) => (
                 <div 
-                  key={index}
-                  className="group p-8 md:p-10 bg-[#243824] border border-[#3d5a3d] rounded-sm hover:border-[#7fde58]/50 transition-all duration-500"
+                  key={item.num}
+                  className="bg-[#162816] p-10 md:p-14 group hover:bg-[#1d331d] transition-colors duration-500"
                 >
-                  <div className="flex items-start gap-6">
-                    <span className="text-[#7fde58] text-sm font-mono mt-1">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-medium text-white mb-2 tracking-wide">
-                        {feature.title}
-                      </h3>
-                      <p className="text-white/70 font-light leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
+                  <span className="text-[#7fde58]/60 text-xs font-mono tracking-wider">{item.num}</span>
+                  <h3 className="text-xl text-white mt-4 mb-3 font-normal tracking-wide">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/50 font-light leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Disclaimer Section */}
-        <section className="py-24 px-6">
+        {/* Platform Usage - Compliance section with premium feel */}
+        <section className="py-32 px-6">
           <div className="max-w-3xl mx-auto">
-            <div className="p-10 md:p-14 bg-[#243824] border border-[#7fde58]/30 rounded-sm">
-              <h2 className="text-xl md:text-2xl font-light text-white mb-8 tracking-wide">
-                Qué no hace la aplicación
+            <div className="border-l-2 border-[#7fde58] pl-8 md:pl-12">
+              <span className="text-[#7fde58] text-xs tracking-[0.3em] uppercase mb-6 block">Transparencia</span>
+              <h2 className="text-2xl md:text-3xl font-light text-white mb-10">
+                Uso de la plataforma
               </h2>
-              <p className="text-white/80 font-light leading-loose text-lg">
-                La plataforma <span className="text-[#7fde58] font-medium">no recibe, retiene ni transfiere dinero</span>. 
-                Todas las aportaciones se realizan directamente entre los participantes a través de 
-                proveedores externos de pago.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Platform Usage Section */}
-        <section className="py-24 px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-light text-white mb-12 tracking-wide">
-              Uso de la plataforma
-            </h2>
-            
-            <div className="space-y-6 text-white/80 font-light leading-loose text-lg">
-              <p>
-                La plataforma puede cobrar una cuota por el uso del software de organización 
-                y coordinación de tandas.
-              </p>
               
-              <p>
-                Esta cuota corresponde únicamente al <span className="text-white font-medium">acceso y 
-                mantenimiento de la plataforma tecnológica</span>.
-              </p>
-              
-              <p>
-                La plataforma no recibe, administra ni participa en las aportaciones económicas 
-                de las tandas.
-              </p>
-              
-              <p className="pt-4 border-t border-[#3d5a3d] text-white/60 text-base">
-                El uso de la plataforma es independiente de los acuerdos económicos entre los participantes.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="py-16 px-6 border-t border-[#3d5a3d]">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 mb-12">
-              {/* Company Info */}
-              <div>
-                <h3 className="text-white font-medium mb-6 tracking-wide">Información Legal</h3>
-                <div className="space-y-3 text-white/60 font-light text-sm">
-                  <p>País: México</p>
-                  <p>
-                    Contacto:{" "}
-                    <a 
-                      href="mailto:contacto@mi-tandita.com" 
-                      className="text-white/80 hover:text-[#7fde58] transition-colors"
-                    >
-                      contacto@mi-tandita.com
-                    </a>
-                  </p>
-                </div>
+              <div className="space-y-8 text-white/70 font-light text-lg leading-relaxed">
+                <p>
+                  La plataforma puede cobrar una cuota por el uso del software 
+                  de organizacion y coordinacion.
+                </p>
+                <p>
+                  Esta cuota corresponde unicamente al 
+                  <span className="text-white"> acceso y mantenimiento </span>
+                  de la plataforma tecnologica.
+                </p>
+                <p>
+                  No recibimos, administramos ni participamos en las aportaciones 
+                  economicas de las tandas.
+                </p>
               </div>
+              
+              <div className="mt-12 pt-8 border-t border-[#3d5a3d]">
+                <p className="text-white/40 text-sm italic">
+                  El uso de la plataforma es independiente de los acuerdos economicos entre los participantes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-              {/* Legal Links */}
+        {/* Footer - Minimal and elegant */}
+        <footer className="py-20 px-6 border-t border-[#3d5a3d]/50">
+          <div className="max-w-5xl mx-auto">
+            
+            <div className="grid md:grid-cols-3 gap-16 mb-16">
+              {/* Brand */}
               <div>
-                <h3 className="text-white font-medium mb-6 tracking-wide">Documentos Legales</h3>
-                <div className="space-y-3 text-sm">
+                <Image
+                  src="/Mi -Tandita-logo.png"
+                  alt="Mi Tandita"
+                  width={120}
+                  height={120}
+                  className="w-24 h-auto mb-6 opacity-80"
+                />
+                <p className="text-white/40 text-sm font-light">
+                  Plataforma de organizacion<br />y coordinacion de tandas.
+                </p>
+              </div>
+              
+              {/* Legal */}
+              <div>
+                <h4 className="text-white/60 text-xs tracking-[0.2em] uppercase mb-6">Legal</h4>
+                <div className="space-y-4">
                   <Link 
                     href="/terminos" 
-                    className="block text-white/60 hover:text-[#7fde58] transition-colors font-light"
+                    className="block text-white/50 hover:text-[#7fde58] transition-colors text-sm font-light"
                   >
-                    Términos y Condiciones
+                    Terminos y Condiciones
                   </Link>
                   <Link 
                     href="/privacidad" 
-                    className="block text-white/60 hover:text-[#7fde58] transition-colors font-light"
+                    className="block text-white/50 hover:text-[#7fde58] transition-colors text-sm font-light"
                   >
                     Aviso de Privacidad
                   </Link>
                 </div>
               </div>
+              
+              {/* Contact */}
+              <div>
+                <h4 className="text-white/60 text-xs tracking-[0.2em] uppercase mb-6">Contacto</h4>
+                <div className="space-y-4 text-sm font-light">
+                  <p className="text-white/50">Mexico</p>
+                  <a 
+                    href="mailto:contacto@mi-tandita.com" 
+                    className="block text-white/50 hover:text-[#7fde58] transition-colors"
+                  >
+                    contacto@mi-tandita.com
+                  </a>
+                </div>
+              </div>
             </div>
-
-            {/* Copyright */}
-            <div className="pt-8 border-t border-[#3d5a3d]/50">
-              <p className="text-white/40 text-xs font-light text-center">
-                © {new Date().getFullYear()} Mi Tandita. Todos los derechos reservados.
+            
+            {/* Bottom bar */}
+            <div className="pt-8 border-t border-[#3d5a3d]/30 flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-white/30 text-xs">
+                © {new Date().getFullYear()} Mi Tandita
+              </p>
+              <p className="text-white/20 text-xs">
+                Hecho en Mexico
               </p>
             </div>
           </div>
