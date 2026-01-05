@@ -77,6 +77,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://mi-tandita.com",
   },
+  verification: {
+    google: "NCJGQvEYpggI7utqdJBZcU6uF4GvNg5q0LyufR5e0tE",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
