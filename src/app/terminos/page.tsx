@@ -83,7 +83,28 @@ export default function TerminosPage() {
 
               <section>
                 <h2 className="text-xl text-white font-medium mb-4 tracking-wide">
-                  4. Responsabilidades del Usuario
+                  4. Uso de la Plataforma
+                </h2>
+                <p>
+                  La plataforma puede cobrar una cuota por el uso del software de organización 
+                  y coordinación de tandas.
+                </p>
+                <p className="mt-4">
+                  Esta cuota corresponde únicamente al acceso y mantenimiento de la plataforma 
+                  tecnológica.
+                </p>
+                <p className="mt-4">
+                  La plataforma no recibe, administra ni participa en las aportaciones económicas 
+                  de las tandas.
+                </p>
+                <p className="mt-4 text-white/60 text-sm border-t border-[#3d5a3d] pt-4">
+                  El uso de la plataforma es independiente de los acuerdos económicos entre los participantes.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-xl text-white font-medium mb-4 tracking-wide">
+                  5. Responsabilidades del Usuario
                 </h2>
                 <p>
                   Los usuarios son responsables de:
@@ -98,7 +119,7 @@ export default function TerminosPage() {
 
               <section>
                 <h2 className="text-xl text-white font-medium mb-4 tracking-wide">
-                  5. Modificaciones
+                  6. Modificaciones
                 </h2>
                 <p>
                   Nos reservamos el derecho de modificar estos términos en cualquier momento. 
@@ -109,7 +130,7 @@ export default function TerminosPage() {
 
               <section>
                 <h2 className="text-xl text-white font-medium mb-4 tracking-wide">
-                  6. Contacto
+                  7. Contacto
                 </h2>
                 <p>
                   Para cualquier consulta sobre estos términos, puede contactarnos en:{" "}

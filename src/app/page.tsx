@@ -104,6 +104,36 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Platform Usage Section */}
+        <section className="py-24 px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-light text-white mb-12 tracking-wide">
+              Uso de la plataforma
+            </h2>
+            
+            <div className="space-y-6 text-white/80 font-light leading-loose text-lg">
+              <p>
+                La plataforma puede cobrar una cuota por el uso del software de organización 
+                y coordinación de tandas.
+              </p>
+              
+              <p>
+                Esta cuota corresponde únicamente al <span className="text-white font-medium">acceso y 
+                mantenimiento de la plataforma tecnológica</span>.
+              </p>
+              
+              <p>
+                La plataforma no recibe, administra ni participa en las aportaciones económicas 
+                de las tandas.
+              </p>
+              
+              <p className="pt-4 border-t border-[#3d5a3d] text-white/60 text-base">
+                El uso de la plataforma es independiente de los acuerdos económicos entre los participantes.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer className="py-16 px-6 border-t border-[#3d5a3d]">
           <div className="max-w-4xl mx-auto">
