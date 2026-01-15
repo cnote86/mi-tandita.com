@@ -138,7 +138,7 @@ export default function TerminosPage() {
                     href="mailto:contacto@mi-tandita.com" 
                     className="text-[#7fde58] hover:text-[#9fe878] transition-colors"
                   >
-                    contacto@mi-tandita.com
+                    contacto@mi-tandita.com | 6631249408
                   </a>
                 </p>
               </section>
